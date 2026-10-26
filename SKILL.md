@@ -173,6 +173,9 @@ Tam liste **`references/content-rules.md`**'de. En kritikleri:
   "GeForce NOW", `/gfn/paketler` "GeForce NOW fiyat", `/gfn/oyunlar` "GeForce NOW oyunları"),
   1-2 GFN kategori, 2-4 ilgili blog yazısı (headline ile doğrulanmış), ilgili GFN Thursday.
   Anchor aranan kelime biçiminde. Detay: `references/ic-linkleme.md`.
+- **Eski adresler yok (v10.32):** `gameplus.com.tr/paketler` artık kullanılmıyor; Ubisoft+ kapanış CTA'sı
+  `/ubisoft/paketler`e gider (Kural 18). Blog linkleri `/blog/` yolu olmadan verilmez; 301 dönmese de
+  kullanılmayan adresler güncel karşılığıyla değiştirilir. verify_output: "Eski adres yok (/paketler)".
 - **Yana yaslı oyun kartı yok (v10.31):** `render_inline_game_card` (float: right) metni daraltıyor;
   tek oyunluk yazıda oyun bilgisi info-card'a yazılır. `verify_output` FAIL verir.
 - **Doc biçimi:** içerik kısmında başlıklar ve metin siyah (Word mavi teması yok), önce yazı sonra HTML.

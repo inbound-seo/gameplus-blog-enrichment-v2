@@ -66,8 +66,8 @@ from gameplus_blog_components import *
 - `render_end_cta(..., btn1_label="GeForce NOW Paketleri", btn1_url="https://gameplus.com.tr/gfn/paketler")` —
   birincil buton artık parametreli; varsayılanlar GFN, GFN yazılarında hiçbir şey değişmez.
 - `render_ubisoft_end_cta(headline, desc, btn2_label=…, btn2_url=…)` — **Ubisoft+ yazılarının kapanış CTA'sı.**
-  Birincil buton "GAME+ Paketleri" -> `https://gameplus.com.tr/paketler` (GFN paketleri DEĞİL), eyebrow
-  "GAME+ · UBISOFT+". İletişimde Ubisoft+ ve GeForce NOW'ı bir arada sunan GAME+ paketi önerilir (Kural 18).
+  Birincil buton "Ubisoft+ Paketleri" -> `https://gameplus.com.tr/ubisoft/paketler` (GFN paketleri DEĞİL), eyebrow
+  "GAME+ · UBISOFT+" (Kural 18, v10.32). Eski `/paketler` adresi kullanılmıyor; verify_output FAIL verir.
   `verify_output` bunu denetler: `cta-ubisoft` varken kapanış `/gfn/paketler`e giderse FAIL.
 - `render_ubisoft_cta(headline, desc, eyebrow="UBISOFT+ · BULUT OYUN", btn_label=…, btn_url=…)` —
   **CTA Paketler ile yapı olarak BİREBİR AYNI**: `gp-conic` çerçeve + `gp-cta-eyebrow` / `gp-cta-title` /

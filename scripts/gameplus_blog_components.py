@@ -1256,14 +1256,14 @@ def render_end_cta(headline, desc, btn2_label="GeForce NOW Oyunları", btn2_url=
 '''
 
 # --- Ubisoft+ yazilarinin KAPANIS CTA'si ---
-# Kural 18: Ubisoft+'a ozgu yazilarda kapanis CTA'si GFN paketlerine DEGIL, GAME+ paketlerine gider
-# (https://gameplus.com.tr/paketler) ve iletisimde Ubisoft+ ile GeForce NOW'i bir arada sunan
-# GAME+ paketi onerilir. Govde/tipografi render_end_cta ile birebir ayni.
+# Kural 18 (v10.32): Ubisoft+'a ozgu yazilarda kapanis CTA'si GFN paketlerine DEGIL, Ubisoft+ paketlerine
+# gider (https://gameplus.com.tr/ubisoft/paketler). Eski GAME+ paketleri adresi /paketler artik kullanilmiyor
+# (/gfn/paketler'e yonleniyor); hicbir linkte kullanilmaz. Govde/tipografi render_end_cta ile birebir ayni.
 def render_ubisoft_end_cta(headline, desc, btn2_label="Ubisoft+ Oyunları",
                            btn2_url="https://gameplus.com.tr/ubisoft/oyunlar"):
     return render_end_cta(headline, desc, btn2_label=btn2_label, btn2_url=btn2_url,
                           eyebrow="GAME+ &bull; UBISOFT+",
-                          btn1_label="GAME+ Paketleri", btn1_url="https://gameplus.com.tr/paketler")
+                          btn1_label="Ubisoft+ Paketleri", btn1_url="https://gameplus.com.tr/ubisoft/paketler")
 
 # --- Ubisoft+ CTA ---
 # Yapi olarak CTA Paketler ile BIREBIR AYNI: gp-conic cerceve, gp-cta-eyebrow / gp-cta-title /
@@ -2210,7 +2210,12 @@ def verify_output(final_html, blog_type="general", n_games=None, expect_faq=Fals
 
     # v10.13: /firsatlar'a yönlendirme YOK (marka kararı) - CTA'lar Paketler / Oyunlar'a gider.
     add("gameplus.com.tr/firsatlar" not in final_html, "Fırsatlar linki yok", "yok",
-        "/firsatlar linki var - CTA'lar /gfn/paketler, /gfn/oyunlar veya /paketler'e yönlendirmeli")
+        "/firsatlar linki var - CTA'lar /gfn/paketler, /gfn/oyunlar veya /ubisoft/paketler'e yönlendirmeli")
+    # v10.32: kullanilmayan eski adresler. /paketler (GAME+ paketleri) artik /gfn/paketler'e yonleniyor;
+    # blog linkleri /blog/ yolu olmadan verilmez. 301 donmese de bu adreslere link verilmez.
+    _eski = sorted(set(re.findall(r'href="(https?://(?:www\.)?gameplus\.com\.tr/paketler/?)"', final_html)))
+    add(not _eski, "Eski adres yok (/paketler)", "yok",
+        f"kullanılmayan adrese link var: {_eski} - /gfn/paketler ya da /ubisoft/paketler kullan")
 
     # v10.13: CTA hedef çakışması. Aynı CTA bloğunda iki buton aynı yere gidemez (FAIL);
     # sayfada aynı hedefin birden çok CTA'da tekrarı bilgi amaçlı UYARI'dır.
@@ -2374,9 +2379,9 @@ def verify_output(final_html, blog_type="general", n_games=None, expect_faq=Fals
                 re.search(r'href="([^"]+)"[^>]*id="end-packages-button"', final_html)
         _href = _ecta.group(1) if _ecta else ""
         add('/gfn/paketler' not in _href, "Kural 18: Ubisoft yazısı kapanış CTA'sı",
-            f"GAME+ paketlerine gidiyor ({_href or 'kapanış CTA yok'})",
+            f"Ubisoft+ paketlerine gidiyor ({_href or 'kapanış CTA yok'})",
             "Ubisoft+ yazısında kapanış CTA'sı /gfn/paketler'e gidiyor — "
-            "render_ubisoft_end_cta kullan (https://gameplus.com.tr/paketler)")
+            "render_ubisoft_end_cta kullan (https://gameplus.com.tr/ubisoft/paketler)")
 
     # 11) PlayStation (GFN platform/lisans/CTA bağlamında YASAK — WARN, haber yazıları hariç)
     if re.search(r'playstation', final_html, re.I):

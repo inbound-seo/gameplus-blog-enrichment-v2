@@ -142,14 +142,17 @@ pazarlama kampanyası olarak okunuyor. Kullanım:
 
 Aynı kural GFN Thursday yerelleştirmesinde de geçerlidir (İngilizce "campaign" -> "hikaye modu").
 
-## Kural 18: Ubisoft+ yazılarında CTA yönlendirmesi GAME+ paketlerine
+## Kural 18: Ubisoft+ yazılarında kapanış CTA yönlendirmesi Ubisoft+ paketlerine (v10.32)
 
 Ubisoft+'a özgü yazılarda (Ubisoft+ aylık derlemesi, Ubisoft+ oyun/DLC yazıları):
 
-- **Kapanış CTA'sı GFN paketlerine DEĞİL, GAME+ paketlerine gider:** `https://gameplus.com.tr/paketler`.
-  `render_end_cta` yerine **`render_ubisoft_end_cta`** kullanılır; birincil buton "GAME+ Paketleri".
-- **İletişimde Ubisoft+ ile GeForce NOW'ı bir arada sunan GAME+ paketi önerilir.** Kapanış metni tek
-  başına GeForce NOW'a değil, ikisini birleştiren pakete yönlendirir.
+- **Kapanış CTA'sı GFN paketlerine DEĞİL, Ubisoft+ paketlerine gider:** `https://gameplus.com.tr/ubisoft/paketler`.
+  `render_end_cta` yerine **`render_ubisoft_end_cta`** kullanılır; birincil buton "Ubisoft+ Paketleri",
+  ikinci buton "Ubisoft+ Oyunları" (`/ubisoft/oyunlar`).
+- **Eski GAME+ paketleri adresi `https://gameplus.com.tr/paketler` artık kullanılmıyor** (26 Ekim 2026,
+  kullanıcı bildirimi; adres `/gfn/paketler`'e yönleniyor). Hiçbir CTA ve gövde linkinde kullanılmaz;
+  `verify_output` "Eski adres yok (/paketler)" kontrolüyle FAIL verir. Aynı şekilde blog linkleri `/blog/`
+  yolu olmadan verilmez; 301 dönmese de kullanılmayan adresler güncel karşılığıyla değiştirilir.
 - **Yazı içi Ubisoft+ CTA'sının eyebrow'u "GAME+ · UBISOFT+"** (`render_ubisoft_cta` varsayılanı).
   Bu blok Ubisoft+ kütüphanesine (`/ubisoft/paketler`) yönlendirmeye devam eder; değişen yalnız kapanış.
 - Ubisoft+ CTA bloğu GFN CTA'sıyla **yapı olarak birebir aynıdır**; yalnız aksan rengi mavi (bkz. design-system).
@@ -167,7 +170,7 @@ gitmez. Kullanılacak hedefler:
 |---|---|
 | GFN paket dönüşümü | `https://gameplus.com.tr/gfn/paketler` |
 | Kütüphane / oyun keşfi | `https://gameplus.com.tr/gfn/oyunlar` |
-| Ubisoft+ yazılarında kapanış (Kural 18) | `https://gameplus.com.tr/paketler` |
+| Ubisoft+ yazılarında kapanış (Kural 18) | `https://gameplus.com.tr/ubisoft/paketler` |
 | Ubisoft+ ara CTA | `https://gameplus.com.tr/ubisoft/paketler` · `/ubisoft/oyunlar` |
 
 `render_end_cta`'nın ikinci buton varsayılanı bu yüzden **GeForce NOW Oyunları ->
