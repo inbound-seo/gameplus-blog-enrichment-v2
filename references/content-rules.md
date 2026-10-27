@@ -270,6 +270,12 @@ bu kurala tabidir. Ayrıntı ve örnekler: `references/inceleme-yazisi.md` böl�
    "bu yazı hazırlanırken", "üç hafta sonra" yazılmaz. Puanlar yine verilir ama tarihle:
    "24 Eylül 2026 itibarıyla OpenCritic'te 84". Puan tablosunun başlığında da tarih bulunur.
    `verify_output` genel blogda göreli ifade görürse UYARI verir.
+6a. **GeForce NOW durumu tarihle verilmez (v10.33, kullanıcı 27 Ekim 2026).** "26 Ekim 2026 itibarıyla
+    GeForce NOW kütüphanesinde", "Bulutta: ... (26 Ekim 2026)", tablo başlığında "(26 Ekim 2026)" yazılmaz;
+    "X GeForce NOW kütüphanesinde yer alıyor" / "kütüphanede yer almıyor" denir. Tarih yalnız anlık veri
+    (Steam anlık oyuncu sayısı, puan, o güne ait sıralama tablosu) ve çıkış / duyuru bilgisi için kullanılır.
+    **Özet tablolarının başlığı içeriği tarif eder** ("FPS Oyunları ve Tarzları", "En İyi MMORPG Oyunları ve
+    Ödeme Modelleri"); "Bir Bakışta" kalıbı ve tarih kullanılmaz.
 7. **Dış link politikası:** veri ve toplayıcı siteler (OpenCritic, Metacritic, HowLongToBeat,
    SteamDB), mağazalar ve resmi geliştirici/yayıncı siteleri linklenebilir; dış link olduğu için
    `nofollow noopener noreferrer` + yeni sekme alır (Kural 21 otomatik ekler). **Oyun basını ve

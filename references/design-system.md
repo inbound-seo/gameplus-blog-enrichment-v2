@@ -487,3 +487,12 @@ satırın büyük harf merkezi arasındaki fark 1.9 px -> 0.1 px.
 **2. GFN Thursday başlıklarında tür rozeti yok.** `render_game_h3_inline(..., badge=None, ...)` rozetsiz
 başlık kurar: yalnız oyun adı + "Stüdyo · Yıl". Marka kararı; gerekçe ve kontrol için content-rules
 kural 11 ve `verify_output(blog_type="gfn")`.
+
+## v10.33 - Yazıya özel başlık ölçüsü istisnası (27 Ekim 2026)
+
+**Genel ölçüler DEĞİŞMEDİ** (H3 28/36, mobil 19/26; H4 24/32, mobil 17/24). Tek seferlik istisna:
+"En İyi FPS Oyunları" yazısında alt alta çok başlık (13 oyun x 4 alt başlık) olduğu için oyun
+başlıkları H3, alt başlıklar ("X nasıl bir oyun?") H4 yapıldı ve **yalnız o yazıda** ek bir stil
+bloğuyla H3 24/32 (mobil 18/26), H4 20/28 (mobil 16/24), tablo üstü başlık 24/32 (mobil 18/26)
+verildi (`revizyon_iskeleti.build(ek_css=...)`). Başka yazıya taşınmaz; kullanıcı istemedikçe genel
+ölçüler kullanılır.

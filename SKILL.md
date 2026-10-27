@@ -173,6 +173,7 @@ Tam liste **`references/content-rules.md`**'de. En kritikleri:
   "GeForce NOW", `/gfn/paketler` "GeForce NOW fiyat", `/gfn/oyunlar` "GeForce NOW oyunları"),
   1-2 GFN kategori, 2-4 ilgili blog yazısı (headline ile doğrulanmış), ilgili GFN Thursday.
   Anchor aranan kelime biçiminde. Detay: `references/ic-linkleme.md`.
+- **GFN durumu tarihsiz (v10.33):** "26 Ekim 2026 itibarıyla GeForce NOW kütüphanesinde" yazılmaz, "GeForce NOW kütüphanesinde yer alıyor" denir; tarih yalnız anlık veri (Steam oyuncu sayısı, puan) ve çıkış bilgisi için. Özet tablosu başlığı içeriği tarif eder ("FPS Oyunları ve Tarzları"), "Bir Bakışta" ve tarih yok. Detay: content-rules.md 6a.
 - **Eski adresler yok (v10.32):** `gameplus.com.tr/paketler` artık kullanılmıyor; Ubisoft+ kapanış CTA'sı
   `/ubisoft/paketler`e gider (Kural 18). Blog linkleri `/blog/` yolu olmadan verilmez; 301 dönmese de
   kullanılmayan adresler güncel karşılığıyla değiştirilir. verify_output: "Eski adres yok (/paketler)".
