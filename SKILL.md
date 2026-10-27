@@ -173,7 +173,8 @@ Tam liste **`references/content-rules.md`**'de. En kritikleri:
   "GeForce NOW", `/gfn/paketler` "GeForce NOW fiyat", `/gfn/oyunlar` "GeForce NOW oyunları"),
   1-2 GFN kategori, 2-4 ilgili blog yazısı (headline ile doğrulanmış), ilgili GFN Thursday.
   Anchor aranan kelime biçiminde. Detay: `references/ic-linkleme.md`.
-- **Gerekmedikçe tarih yok (v10.33-v10.34):** değişebilen durumlar (GFN kütüphanesi, puan, sezon, Türkçe, en yeni oyun) "şu anda" / "an itibarıyla" ile yazılır, "27 Ekim 2026 itibarıyla" kalıbı kullanılmaz; tarih yalnız çıkış / duyuru tarihleri ve belli bir güne ait veri tablosu için. Özet tablosu başlığı içeriği tarif eder ("FPS Oyunları ve Tarzları"), "Bir Bakışta" ve tarih yok. Detay: content-rules.md 6a.
+- **Gerekmedikçe tarih yok (v10.33-v10.35):** değişebilen durumlar (GFN kütüphanesi, sezon, Türkçe, en yeni oyun) "şu anda" / "an itibarıyla" ile yazılır, "27 Ekim 2026 itibarıyla" kalıbı kullanılmaz; **puanlar ay-yıl ile** ("Ekim 2026 itibarıyla OpenCritic'te 84", "Puan Tablosu (Ekim 2026)"), gün yazılmaz; tarih yalnız çıkış / duyuru tarihleri ve belli bir güne ait veri tablosu için.
+- **Çok başlıklı yazı önerisi (v10.35):** alt alta çok başlık içeren yazıda (FPS örneği: oyun başına 4 alt başlık) oyun başlıkları H3, alt başlıklar H4 ve yazıya özel küçük ölçü (H3 24/18, H4 20/16 px, `ek_css`) kullanıcıya önerilir; onaysız uygulanmaz, genel ölçüler değişmez. Özet tablosu başlığı içeriği tarif eder ("FPS Oyunları ve Tarzları"), "Bir Bakışta" ve tarih yok. Detay: content-rules.md 6a.
 - **Eski adresler yok (v10.32):** `gameplus.com.tr/paketler` artık kullanılmıyor; Ubisoft+ kapanış CTA'sı
   `/ubisoft/paketler`e gider (Kural 18). Blog linkleri `/blog/` yolu olmadan verilmez; 301 dönmese de
   kullanılmayan adresler güncel karşılığıyla değiştirilir. verify_output: "Eski adres yok (/paketler)".

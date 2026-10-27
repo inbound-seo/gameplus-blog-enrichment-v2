@@ -494,5 +494,7 @@ kural 11 ve `verify_output(blog_type="gfn")`.
 "En İyi FPS Oyunları" yazısında alt alta çok başlık (13 oyun x 4 alt başlık) olduğu için oyun
 başlıkları H3, alt başlıklar ("X nasıl bir oyun?") H4 yapıldı ve **yalnız o yazıda** ek bir stil
 bloğuyla H3 24/32 (mobil 18/26), H4 20/28 (mobil 16/24), tablo üstü başlık 24/32 (mobil 18/26)
-verildi (`revizyon_iskeleti.build(ek_css=...)`). Başka yazıya taşınmaz; kullanıcı istemedikçe genel
-ölçüler kullanılır.
+verildi (`revizyon_iskeleti.build(ek_css=...)`). Başka yazıya kendiliğinden taşınmaz; kullanıcı istemedikçe
+genel ölçüler kullanılır. **Öneri kuralı:** yine alt alta çok başlık içeren bir yazı gelirse (ör. oyun başına
+3-4 alt başlık, toplamda onlarca H3/H4) bu yapı ve ölçü kullanıcıya **önerilir**: oyun başlıkları H3, alt
+başlıklar H4, yazıya özel H3 24/32 (mobil 18/26) ve H4 20/28 (mobil 16/24). Onay gelmeden uygulanmaz.

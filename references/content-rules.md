@@ -267,12 +267,13 @@ bu kurala tabidir. Ayrıntı ve örnekler: `references/inceleme-yazisi.md` böl�
 5. **Alternatif ad metinde geçer.** Oyun başka bir adla da aranıyorsa ("Control 2") girişte ve
    Nedir bölümünde bir kez, SSS'de soru olarak bir kez anılır.
 6. **Gerekmedikçe tarih yok; durum ifadesi "şu anda" / "an itibarıyla" (v10.34, kullanıcı 27 Ekim 2026).**
-   Değişebilen durumlar (GeForce NOW kütüphanesi, puan, sezon, Türkçe desteği, en yeni oyun, çıkış tarihi
-   açıklanmadı) tarihle değil "şu anda" ya da "an itibarıyla" ile yazılır: "Oyun şu anda OpenCritic'te 84",
-   "An itibarıyla serinin en yeni oyunu Battlefield 6", "çıkış tarihi şu anda açıklanmış değil".
-   "27 Ekim 2026 itibarıyla" kalıbı ve puan tablosu başlığına tarih yazılmaz. **Tarih yalnız gerekliyse
-   kalır:** çıkış / duyuru / güncelleme tarihleri ("9 Eylül 2026'da çıktı") ve belli bir güne ait veri
-   tablosu (ör. "Steam'de En Çok Oynanan Oyunlar (25 Ekim 2026)"). Yayın tarihine bağlı göreli ifadeler
+   Değişebilen durumlar (GeForce NOW kütüphanesi, sezon, Türkçe desteği, en yeni oyun, çıkış tarihi
+   açıklanmadı) tarihle değil "şu anda" ya da "an itibarıyla" ile yazılır: "An itibarıyla serinin en yeni
+   oyunu Battlefield 6", "çıkış tarihi şu anda açıklanmış değil". "27 Ekim 2026 itibarıyla" kalıbı kullanılmaz.
+   **Puanlar ay-yıl ile verilebilir, gün yazılmaz (v10.35):** "Ekim 2026 itibarıyla OpenCritic'te 84",
+   puan tablosu başlığı "{Oyun} Puan Tablosu (Ekim 2026)". **Tarih yalnız gerekliyse kalır:** çıkış / duyuru /
+   güncelleme tarihleri ("9 Eylül 2026'da çıktı") ve belli bir güne ait veri tablosu (ör. "Steam'de En Çok
+   Oynanan Oyunlar (25 Ekim 2026)"). Yayın tarihine bağlı göreli ifadeler
    yine yazılmaz: "bugün", "dün", "yarın", "bu yazı hazırlanırken", "geçen hafta", "üç hafta sonra".
    `verify_output` genel blogda bunları görürse UYARI verir; "şu anda" ve "an itibarıyla" serbesttir.
 6a. **GeForce NOW durumu tarihle verilmez (v10.33, kullanıcı 27 Ekim 2026).** "26 Ekim 2026 itibarıyla

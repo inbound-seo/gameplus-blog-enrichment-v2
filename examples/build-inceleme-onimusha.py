@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-# NOT (v10.34, 27 Ekim 2026): Bu örnek eski tarihli kalıbı taşır ("24 Eylül 2026 itibarıyla", "Puan Tablosu
-# (24 Eylül 2026)"). Yeni yazılarda değişebilen durumlar "şu anda" / "an itibarıyla" ile yazılır, tablo
-# başlığına ve GeForce NOW cümlelerine tarih konmaz (content-rules.md Kural 6 ve 6a).
+# NOT (v10.35, 27 Ekim 2026): Bu örnek gün içeren eski kalıbı taşır ("24 Eylül 2026 itibarıyla", "Puan Tablosu
+# (24 Eylül 2026)"). Yeni yazılarda puan ay-yıl ile verilir ("Eylül 2026 itibarıyla", "Puan Tablosu (Eylül 2026)"),
+# diğer değişebilen durumlar "şu anda" / "an itibarıyla" ile yazılır, GeForce NOW cümlelerine tarih konmaz
+# (content-rules.md Kural 6 ve 6a).
 """Onimusha: Way of the Sword incelemesi -> v10.26 enriched HTML + doc (metin + HTML).
 
 Brief: Game+ Blogları/Game+ Blog Briefleri.xlsx (satir: Onimusha: Way of the Sword).
