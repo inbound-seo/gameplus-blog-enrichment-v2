@@ -152,7 +152,7 @@ Tam liste **`references/content-rules.md`**'de. En kritikleri:
 - **Yeni içerikte SEO/GEO (Kural 25, inceleme ve listicle dahil):** yazmadan önce DataForSEO ile
   hacim + PAA + ilgili aramalar + Türkçe rakipler; her H2'nin ilk cümlesi başlığı yanıtlar; H2'lerin
   çoğunda oyun adı; SSS arama talebinden (Türkçe ve GFN soruları her yazıda); alternatif ad metinde
-  ("Control 2"); göreli zaman yok, tarih var; veri sitelerine (OpenCritic, Metacritic, HowLongToBeat)
+  ("Control 2"); gerekmedikçe tarih yok, durum "şu anda" / "an itibarıyla" ile (v10.34); veri sitelerine (OpenCritic, Metacritic, HowLongToBeat)
   nofollow link verilir, **oyun basınına (GameSpot, IGN, Oyungezer vb.) asla link verilmez**; ilgili
   GFN Thursday yazısına iç link (soft 404 nedeniyle önce başlığı doğrulanır).
 - **Basın adı metinde geçmez (v10.26):** incelemeler araştırılır ama "IGN'e göre", "GameSpot 9 verdi"
@@ -173,7 +173,7 @@ Tam liste **`references/content-rules.md`**'de. En kritikleri:
   "GeForce NOW", `/gfn/paketler` "GeForce NOW fiyat", `/gfn/oyunlar` "GeForce NOW oyunları"),
   1-2 GFN kategori, 2-4 ilgili blog yazısı (headline ile doğrulanmış), ilgili GFN Thursday.
   Anchor aranan kelime biçiminde. Detay: `references/ic-linkleme.md`.
-- **GFN durumu tarihsiz (v10.33):** "26 Ekim 2026 itibarıyla GeForce NOW kütüphanesinde" yazılmaz, "GeForce NOW kütüphanesinde yer alıyor" denir; tarih yalnız anlık veri (Steam oyuncu sayısı, puan) ve çıkış bilgisi için. Özet tablosu başlığı içeriği tarif eder ("FPS Oyunları ve Tarzları"), "Bir Bakışta" ve tarih yok. Detay: content-rules.md 6a.
+- **Gerekmedikçe tarih yok (v10.33-v10.34):** değişebilen durumlar (GFN kütüphanesi, puan, sezon, Türkçe, en yeni oyun) "şu anda" / "an itibarıyla" ile yazılır, "27 Ekim 2026 itibarıyla" kalıbı kullanılmaz; tarih yalnız çıkış / duyuru tarihleri ve belli bir güne ait veri tablosu için. Özet tablosu başlığı içeriği tarif eder ("FPS Oyunları ve Tarzları"), "Bir Bakışta" ve tarih yok. Detay: content-rules.md 6a.
 - **Eski adresler yok (v10.32):** `gameplus.com.tr/paketler` artık kullanılmıyor; Ubisoft+ kapanış CTA'sı
   `/ubisoft/paketler`e gider (Kural 18). Blog linkleri `/blog/` yolu olmadan verilmez; 301 dönmese de
   kullanılmayan adresler güncel karşılığıyla değiştirilir. verify_output: "Eski adres yok (/paketler)".

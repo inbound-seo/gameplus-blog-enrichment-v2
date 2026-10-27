@@ -266,14 +266,18 @@ bu kurala tabidir. Ayrıntı ve örnekler: `references/inceleme-yazisi.md` böl�
    yazılmaz. Cevap 20-60 kelime, ilk cümle doğrudan cevap.
 5. **Alternatif ad metinde geçer.** Oyun başka bir adla da aranıyorsa ("Control 2") girişte ve
    Nedir bölümünde bir kez, SSS'de soru olarak bir kez anılır.
-6. **Göreli zaman yok, tarih var.** Yazının yayın tarihi belli olmadığından "bugün", "henüz",
-   "bu yazı hazırlanırken", "üç hafta sonra" yazılmaz. Puanlar yine verilir ama tarihle:
-   "24 Eylül 2026 itibarıyla OpenCritic'te 84". Puan tablosunun başlığında da tarih bulunur.
-   `verify_output` genel blogda göreli ifade görürse UYARI verir.
+6. **Gerekmedikçe tarih yok; durum ifadesi "şu anda" / "an itibarıyla" (v10.34, kullanıcı 27 Ekim 2026).**
+   Değişebilen durumlar (GeForce NOW kütüphanesi, puan, sezon, Türkçe desteği, en yeni oyun, çıkış tarihi
+   açıklanmadı) tarihle değil "şu anda" ya da "an itibarıyla" ile yazılır: "Oyun şu anda OpenCritic'te 84",
+   "An itibarıyla serinin en yeni oyunu Battlefield 6", "çıkış tarihi şu anda açıklanmış değil".
+   "27 Ekim 2026 itibarıyla" kalıbı ve puan tablosu başlığına tarih yazılmaz. **Tarih yalnız gerekliyse
+   kalır:** çıkış / duyuru / güncelleme tarihleri ("9 Eylül 2026'da çıktı") ve belli bir güne ait veri
+   tablosu (ör. "Steam'de En Çok Oynanan Oyunlar (25 Ekim 2026)"). Yayın tarihine bağlı göreli ifadeler
+   yine yazılmaz: "bugün", "dün", "yarın", "bu yazı hazırlanırken", "geçen hafta", "üç hafta sonra".
+   `verify_output` genel blogda bunları görürse UYARI verir; "şu anda" ve "an itibarıyla" serbesttir.
 6a. **GeForce NOW durumu tarihle verilmez (v10.33, kullanıcı 27 Ekim 2026).** "26 Ekim 2026 itibarıyla
     GeForce NOW kütüphanesinde", "Bulutta: ... (26 Ekim 2026)", tablo başlığında "(26 Ekim 2026)" yazılmaz;
-    "X GeForce NOW kütüphanesinde yer alıyor" / "kütüphanede yer almıyor" denir. Tarih yalnız anlık veri
-    (Steam anlık oyuncu sayısı, puan, o güne ait sıralama tablosu) ve çıkış / duyuru bilgisi için kullanılır.
+    "X GeForce NOW kütüphanesinde yer alıyor" / "şu anda kütüphanede yer almıyor" denir (Kural 6).
     **Özet tablolarının başlığı içeriği tarif eder** ("FPS Oyunları ve Tarzları", "En İyi MMORPG Oyunları ve
     Ödeme Modelleri"); "Bir Bakışta" kalıbı ve tarih kullanılmaz.
 7. **Dış link politikası:** veri ve toplayıcı siteler (OpenCritic, Metacritic, HowLongToBeat,

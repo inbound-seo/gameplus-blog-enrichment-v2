@@ -23,8 +23,9 @@ Sıra sabit değil ama bu iskelet onaylandı:
 4. **Oyunun en çok tartışılan sistemi** - ne olduğu, nasıl işlediği (madde listesi), eleştirmen
    ve oyuncu tarafının nasıl ayrıştığı. Editör notu buraya girer.
 5. **`{Oyun}'da Dövüş Nasıl İşliyor?`** - mekanikler, ilerleme, eleştiriler.
-6. **`{Oyun} Puanları: Metacritic ve OpenCritic`** - puan tablosu + yorum. İlk cümle puanı tarihle
-   verir, tablonun başlığında da **ölçüm tarihi** bulunur ("Puan Tablosu (24 Eylül 2026)").
+6. **`{Oyun} Puanları: Metacritic ve OpenCritic`** - puan tablosu + yorum. İlk cümle puanı "şu anda" /
+   "an itibarıyla" ile verir ("Oyun şu anda OpenCritic'te 84"); tablo başlığına tarih yazılmaz
+   ("{Oyun} Puan Tablosu"). v10.34 öncesi örneklerde tarihli kalıp vardı.
 7. **`{Oyun} Türkçe mi, Kaç Saat Sürüyor?`** - Türkçe dil desteği, süre, donanımın iki cümlelik özeti.
 8. **`{Oyun} Alınır mı?`** - ilk cümle doğrudan cevap; ardından "tam sana göre" (tikli) ve
    "beklentini ayarla" (noktalı) diye **iki ayrı liste**. Olumlu ve uyarı maddeleri aynı tikli
@@ -221,15 +222,18 @@ ilettiğinde brief yok.
   alınmadı).
 - 20-60 kelime, ilk cümle doğrudan cevap, gövdedeki cümleyi birebir tekrar etmez.
 
-## 10. Zaman ifadeleri: tarihli yaz
+## 10. Zaman ifadeleri: gerekmedikçe tarih yok (v10.34)
 
-Yayın tarihi belli olmadığı için göreli ifade yazılmaz; puanlar yine verilir ama tarihle.
+Değişebilen durumlar (puan, GeForce NOW, sezon, Türkçe) "şu anda" / "an itibarıyla" ile yazılır;
+tarih yalnız çıkış / duyuru gibi gerekli yerlerde kalır. Yayın tarihine bağlı göreli ifadeler
+("bugün", "bu yazı hazırlanırken", "üç hafta sonra") yazılmaz.
 
 | Yazılmaz | Yazılır |
 |---|---|
 | "bugün çıktı" | "24 Eylül 2026'da çıktı" |
 | "Oyun bu yazı hazırlanırken yeni çıktığı için Steam'de kullanıcı incelemesi bulunmuyor" | Hiç yazılmaz: veri yoksa alan kaldırılır (bkz. aşağı) |
-| "Oyun, çıkışından üç hafta sonra olumlu bir tabloya sahip" | "24 Eylül 2026 itibarıyla ... puana sahip" |
+| "Oyun, çıkışından üç hafta sonra olumlu bir tabloya sahip" | "Oyun şu anda ... puana sahip" / "An itibarıyla ... puana sahip" |
+| "24 Eylül 2026 itibarıyla OpenCritic'te 84" | "Şu anda OpenCritic'te 84" |
 | "çıkıştan bir hafta sonra" | "çıkışı izleyen hafta içinde" |
 
 ### Veri yoksa alan yazılmaz (v10.28)

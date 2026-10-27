@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# NOT (v10.34, 27 Ekim 2026): Bu örnek eski tarihli kalıbı taşır ("24 Eylül 2026 itibarıyla", "Puan Tablosu
+# (24 Eylül 2026)"). Yeni yazılarda değişebilen durumlar "şu anda" / "an itibarıyla" ile yazılır, tablo
+# başlığına ve GeForce NOW cümlelerine tarih konmaz (content-rules.md Kural 6 ve 6a).
 """The Blood of Dawnwalker incelemesi -> v10.23 enriched HTML + doc (metin + HTML).
 
 Kaynaklar (hepsi 24 Eylul 2026'da dogrulandi):

@@ -2341,15 +2341,16 @@ def verify_output(final_html, blog_type="general", n_games=None, expect_faq=Fals
             warn=True)
 
     # v10.25 (Kural 25): yeni yazida yayin tarihine bagli goreli zaman ifadesi kullanilmaz.
+    # v10.34: 'şu anda' ve 'an itibarıyla' serbest (kullanici, 27 Ekim 2026); gereksiz tarih yazilmaz.
     # Yazar taslaginda olabilir (dokunulmaz), bu yuzden UYARI. GFN Thursday'de "bu hafta" dogaldir.
     if blog_type == "general":
         _gov_metin = re.sub(r"<[^>]+>", " ", re.sub(r"<(script|style)\b.*?</\1>", "",
                                                    final_html, flags=re.S))
         _goreli = re.findall(r"\b(bugün|dün|yarın|bu yazı hazırlanırken|geçen hafta|önümüzdeki hafta|"
-                             r"\w+ hafta sonra|\w+ gün önce|şu anda)\b", _gov_metin, flags=re.I)
+                             r"\w+ hafta sonra|\w+ gün önce)\b", _gov_metin, flags=re.I)
         add(not _goreli, "Göreli zaman ifadesi yok", "yok",
             f"{len(_goreli)} göreli ifade ({sorted(set(x.lower() for x in _goreli))[:4]}) - "
-            f"yayın tarihi belli değil, tarihli kalıp kullan ('24 Eylül 2026 itibarıyla')", warn=True)
+            f"yayın tarihi belli değil; durum için 'şu anda' / 'an itibarıyla' kullan (v10.34)", warn=True)
 
     # v10.12: "Tabloyu yana kaydır" ipucu tablo kabının DIŞINDA, hemen ÜSTÜNDE olmalı.
     _ipucu_icerde = re.search(r'<div class="table-wrap[^"]*">\s*<div class="gp-table-hint"', final_html)
