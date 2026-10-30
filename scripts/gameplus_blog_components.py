@@ -2267,8 +2267,11 @@ def verify_output(final_html, blog_type="general", n_games=None, expect_faq=Fals
     _rozet_sayisi = len(re.findall(r'class="gp-game-badge"', final_html))
     if blog_type == "gfn":
         add(_rozet_sayisi == 0, "GFN başlığında tür rozeti yok", "rozetsiz",
-            f"{_rozet_sayisi} başlıkta tür rozeti var - GFN Thursday'de başlığa tür etiketi konmaz "
-            f"(render_game_h3_inline'a badge=None ver)")
+            f"{_rozet_sayisi} başlıkta tür rozeti var - GFN Thursday'de başlığa tür etiketi konmaz")
+        # v10.37: GFN Thursday'de başlıklara hiç etiket eklenmez ("Stüdyo · Yıl" satırı dahil).
+        add(_rozetli_baslik == 0, "GFN başlığında etiket yok", "düz başlık",
+            f"{_rozetli_baslik} başlık oyun etiketiyle kurulmuş (gp-game-head) - GFN Thursday'de yazarın "
+            f"başlığı düz <h2>/<h3> kalır, render_game_h3_inline kullanılmaz")
 
     # v10.22: Google tercih edilen kaynak kartı - her blogda tek kez, bir başlıktan hemen önce,
     # yazının ortalarında. Kart GA4 kimliklerini ve kendi CSS'ini taşımalı.

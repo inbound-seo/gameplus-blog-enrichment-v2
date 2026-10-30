@@ -65,6 +65,14 @@ GFN yazılarının iki ritmi var; info-card ve TLDR metrikleri buna göre deği�
 - TLDR ilk maddesi de aynı mantıkla: yeni oyun yoksa "Bu hafta: N yeni oyun" deme; "Bu hafta öne çıkan: X'in yeni sezonu / Y güncellemesi / geri dönen Z" gibi o haftaya özgü bir özet ver.
 
 ## 11. Oyun giriş formatı: tür + stüdyo + yıl (genel blog) / stüdyo + yıl (GFN Thursday)
+> **GFN Thursday: başlıklara etiket eklenmez (v10.37, kullanıcı kararı 30 Ekim 2026).** Haftalık derlemede
+> yazarın başlıkları düz `<h2>/<h3>` kalır: ne tür rozeti ne "Stüdyo · Yıl" satırı eklenir,
+> `render_game_h3_inline` kullanılmaz. Bölüm bir oyunu anlatsa da ("Bıçağın Gücü, Bulutun Gücüyle Buluşuyor"
+> = Phantom Blade Zero; 1 Ekim 2026'daki "Beyaz Kurt Geri Dönüyor" = The Witcher 3) başlık etiketsiz kalır.
+> Oyunun türü, stüdyosu ve yılı yalnız **tablodaki** Tür sütununda ve oyun adının altındaki stüdyo satırında
+> verilir. `verify_output(blog_type="gfn")` başlıkta `gp-game-head` bulursa FAIL verir. Aşağıdaki v10.23
+> notu (rozetsiz, yalnız "Stüdyo · Yıl") bu kuralla geçersizleşti.
+>
 > **GFN Thursday istisnası (v10.23, marka kararı): haftalık derleme başlıklarında TÜR ROZETİ KULLANILMAZ.**
 > `render_game_h3_inline(anchor, isim, None, None, "Stüdyo · Yıl", level=...)` ile rozetsiz başlık kurulur;
 > başlık yalnız oyun adı + "Stüdyo · Yıl" taşır. Rozet yalnızca **genel blogda** (rehber, listicle, "en iyi X",

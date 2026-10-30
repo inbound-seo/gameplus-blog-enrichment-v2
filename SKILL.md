@@ -31,7 +31,7 @@ Skill iki blog tipini ayırt eder; bileşen seti farklıdır:
 | CTA sayısı | **2-3** (her zaman 3 şart değil): Paketler + dual End zorunlu, CTA Oyunlar opsiyonel | **Tek** End CTA + 1 compact featured CTA |
 | Compact CTA | yok | ✅ öne çıkan oyun için (Controller-Tag) |
 | Önceki haftalar | yok | ✅ soft-border kart grid |
-| Oyun başlığı | tür rozeti + isim + "Stüdyo · Yıl" | **rozet YOK** - isim + "Stüdyo · Yıl" (`badge=None`, v10.23) |
+| Oyun başlığı | tür rozeti + isim + "Stüdyo · Yıl" | **etiket YOK (v10.37)** - yazarın başlığı düz `<h2>/<h3>` kalır; rozet de "Stüdyo · Yıl" satırı da eklenmez, `render_game_h3_inline` kullanılmaz. Tür / stüdyo / yıl yalnız tabloda |
 | Editör notu / Hatırlatma | ihtiyaç oldukça | ihtiyaç oldukça |
 
 Detaylı yerleşim kuralları: **`references/placement-rules.md`**.
@@ -76,7 +76,7 @@ faq    = render_faq_accordion([(soru, cevap), ...])
 - Karşılaştırma tablosu → ilgili kavram paragrafından sonra
 - **CTA Paketler** → 2. H2'den önce
 - **Card-table** → listicle'ın yerine, ilk oyun H3'ünden ÖNCE (genel blog); GFN'de oyun listesi yerine
-- Genel blogda VE etkinlik özetlerinde (State of Play vb.) her oyun H3'ü → `render_game_h3_inline()` ile **tür etiketi + isim + "Stüdyo · Yıl"** formatına çevir (ZORUNLU, düz başlık bırakma). **GFN Thursday'de tür rozeti KULLANILMAZ** (`badge=None`): başlık = isim + "Stüdyo · Yıl" (content-rules 11)
+- Genel blogda VE etkinlik özetlerinde (State of Play vb.) her oyun H3'ü → `render_game_h3_inline()` ile **tür etiketi + isim + "Stüdyo · Yıl"** formatına çevir (ZORUNLU, düz başlık bırakma). **GFN Thursday'de başlıklara hiçbir etiket eklenmez (v10.37):** ne tür rozeti ne "Stüdyo · Yıl" satırı; başlık bir oyunun bölümü olsa da ("Bıçağın Gücü, Bulutun Gücüyle Buluşuyor" = Phantom Blade Zero) düz başlık kalır (content-rules 11)
 - **End CTA** → SSS H2'sinden önce
 - **FAQ accordion** → SSS bölümündeki H3+P çiftlerinin yerine
 - **Tercih edilen kaynak kartı (v10.22, HER BLOGDA, GFN Thursday dahil)** → yazının ortalarında bir başlığın
@@ -174,6 +174,7 @@ Tam liste **`references/content-rules.md`**'de. En kritikleri:
   1-2 GFN kategori, 2-4 ilgili blog yazısı (headline ile doğrulanmış), ilgili GFN Thursday.
   Anchor aranan kelime biçiminde. Detay: `references/ic-linkleme.md`.
 - **Gerekmedikçe tarih yok (v10.33-v10.35):** değişebilen durumlar (GFN kütüphanesi, sezon, Türkçe, en yeni oyun) "şu anda" / "an itibarıyla" ile yazılır, "27 Ekim 2026 itibarıyla" kalıbı kullanılmaz; **puanlar ay-yıl ile** ("Ekim 2026 itibarıyla OpenCritic'te 84", "Puan Tablosu (Ekim 2026)"), gün yazılmaz; tarih yalnız çıkış / duyuru tarihleri ve belli bir güne ait veri tablosu için.
+- **GFN Thursday başlıkları etiketsiz (v10.37, kullanıcı kararı 30 Ekim 2026):** haftalık derlemede yazarın başlıkları düz `<h2>/<h3>` kalır; `render_game_h3_inline` (rozet ya da "Stüdyo · Yıl" satırı) kullanılmaz, oyun bilgisi tablodaki Tür ve stüdyo satırında verilir. `verify_output(blog_type="gfn")` başlıkta `gp-game-head` bulursa FAIL verir. Haftanın öne çıkan oyununun incelemesi varsa ilgili bölüme incelemeye giden tek bir cümle eklenebilir ("... Phantom Blade Zero incelememize göz atabilirsin.").
 - **İnceleme revizesi kuralları (v10.36, Phantom Blade Zero):** info-card'da puan tek platform ("88 PC") ve süre karosu **"Ana Hikaye"** (ana hikaye süresi; toplam süre metinde / süre tablosunda, `Yazi.tablo`); "{Oyun} Nedir?" varsayılan değil, otomatik tamamlama + GSC'ye göre çoğu zaman **"Nasıl Bir Oyun?"**; yazmadan önce rakip inceleme yazıları ve inceleme videoları (DataForSEO altyazı) taranır, en az iki kaynakta tekrar eden eksik konular eklenir; performans bölümü GeForce NOW atfıyla biter; paragraf en çok 4 cümle / ~80 kelime; sıkıştırılmış teknik ifade yok ("uzun ilk derleme" yerine açık cümle); link eki link metninin içinde ("incelememize", "oyunlarına da"). `verify_output`: "Link eki: yapışık -miz yok" (yeni içerikte FAIL), "Link sonrası da/de uyumu", "Paragraf uzunluğu", "Sade teknik ifade" (UYARI). Detay: inceleme-yazisi.md bölüm 1, 3, 7.
 - **Çok başlıklı yazı önerisi (v10.35):** alt alta çok başlık içeren yazıda (FPS örneği: oyun başına 4 alt başlık) oyun başlıkları H3, alt başlıklar H4 ve yazıya özel küçük ölçü (H3 24/18, H4 20/16 px, `ek_css`) kullanıcıya önerilir; onaysız uygulanmaz, genel ölçüler değişmez. Özet tablosu başlığı içeriği tarif eder ("FPS Oyunları ve Tarzları"), "Bir Bakışta" ve tarih yok. Detay: content-rules.md 6a.
 - **Eski adresler yok (v10.32):** `gameplus.com.tr/paketler` artık kullanılmıyor; Ubisoft+ kapanış CTA'sı

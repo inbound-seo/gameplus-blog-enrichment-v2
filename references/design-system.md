@@ -488,6 +488,9 @@ satırın büyük harf merkezi arasındaki fark 1.9 px -> 0.1 px.
 başlık kurar: yalnız oyun adı + "Stüdyo · Yıl". Marka kararı; gerekçe ve kontrol için content-rules
 kural 11 ve `verify_output(blog_type="gfn")`.
 
+**v10.37 güncellemesi:** GFN Thursday başlıklarında "Stüdyo · Yıl" satırı da kullanılmaz; başlık
+`render_game_h3_inline` olmadan düz `<h2>/<h3>` kalır (content-rules kural 11).
+
 ## v10.33 - Yazıya özel başlık ölçüsü istisnası (27 Ekim 2026)
 
 **Genel ölçüler DEĞİŞMEDİ** (H3 28/36, mobil 19/26; H4 24/32, mobil 17/24). Tek seferlik istisna:
