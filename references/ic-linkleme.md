@@ -18,7 +18,9 @@ başlıkta, Hızlı Özet'te, tabloda ve CTA metninde iç link olmaz.
 
 Sabit üçlü markanın neredeyse her yazısında var (tabloda 89 / 88 / 73 kez). Yerleşim, canlı
 yazılardaki gibi GFN bölümünün sonunda tek cümlede: "Güncel **GeForce NOW fiyat** bilgisine ve
-kütüphanedeki diğer **GeForce NOW oyunlarına** de göz atabilirsin." `/gfn` linki GFN bölümünün
+kütüphanedeki diğer **GeForce NOW oyunlarına** da göz atabilirsin." ("de" değil: bağlaç link metninin
+son ünlüsüne uyar; v10.36 öncesi şablonda "de" yazıyordu.) Link eki her zaman link metninin içindedir:
+"Onimusha: Way of the Sword **incelememize**" (anchor + "miz" ile "incelemesimiz" oluşmaz). `/gfn` linki GFN bölümünün
 ilk cümlesindeki "GeForce NOW" ifadesine verilir.
 
 ## 2. İlgili blog yazısı seçimi

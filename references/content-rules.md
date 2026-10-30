@@ -123,7 +123,9 @@ Skill yazarın metnine DOKUNMAZ; ama eklediğimiz her metin (TLDR, karosel, CTA,
 - **Klişe açılış/kapanış YASAK:** "Şimdi gel… birlikte bakalım/keşfedelim", "Hazır mısın? / Hazırsan…", "…ne dersin?", "kapını çalıyor", "vakit kaybetmeden detaylara geçelim".
 - **Hype/süperlatif YASAK → doğal karşılık:** "müthiş adrenalin salgılıyor"→"ilk saniyeden gerginlik başlıyor"; "kasıp kavuruyor"→"hâlâ en çok oynananlar arasında"; "efsanevi/başyapıt/muazzam/nefes kesen/baş döndürücü/eğlence fırtınası"→ölçülü, somut betimleme. Sıfat yerine sahne göster.
 - **GFN ifade varyasyonu:** "bulut tabanlı oyun platformu GeForce NOW destekli yapımları" kalıbını tekrarlamak yerine eş anlamlı döngü kullan ("bulutta oynayabileceğin oyunlar", "kütüphanendeki desteklenen yapımlar", "GeForce NOW ile eriştiğin oyunlar"). CTA dürüstlüğü (kural 2) korunur.
-- **Paragraf ritmi (tam yazı yazarken):** gövde paragrafı 2-4 cümle / ~40-80 kelime; arada tek cümlelik vurucu paragraf; 5+ cümlelik blok bölünür; her bölümün ilk cümlesi soruyu net yanıtlar (answer-first).
+- **Paragraf ritmi (tam yazı yazarken):** gövde paragrafı 2-4 cümle / ~40-80 kelime; arada tek cümlelik vurucu paragraf; 5+ cümlelik blok bölünür; her bölümün ilk cümlesi soruyu net yanıtlar (answer-first). v10.36: yeni içerikte `verify_output` 85 kelimeyi ya da 5 cümleyi aşan paragrafta uyarır.
+- **Sade cümle (v10.36):** sıkıştırılmış teknik isim tamlaması yazılmaz ("uzun ilk derleme", "çevre geometrisi", "kare zamanlaması", "doku yüklenme gecikmesi"); durum bir cümleyle anlatılır, terim gerekiyorsa parantezle verilir. Detay ve örnekler: inceleme-yazisi.md bölüm 3.
+- **Link ekleri (v10.36):** ek link metninin içine yazılır ("incelememize", "incelemesi" + "miz" değil); linkten sonraki "da / de" link metninin son ünlüsüne uyar ("oyunlarına da"). `verify_output` "Link eki uyumu" denetler.
 
 ## Kural 17: "Campaign" = hikaye modu, "kampanya" YAZMA
 

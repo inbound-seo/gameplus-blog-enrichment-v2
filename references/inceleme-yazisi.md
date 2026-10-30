@@ -18,19 +18,39 @@ Sıra sabit değil ama bu iskelet onaylandı:
 
 1. **Başlıksız giriş (2 paragraf).** İlk paragraf oyunu tek cümlede kurar (kim, nerede, ne yapıyor);
    ikinci paragraf stüdyoyu, çıkış tarihini ve varsa satış/ilgi verisini verir ve yazının sorusunu koyar.
-2. **`{Oyun} Nedir?`** - tür, yayıncı, motor, platformlar, stüdyo geçmişi. Fragman bu bölümde.
+2. **`{Oyun} Nasıl Bir Oyun?`** (v10.36; eskisi `{Oyun} Nedir?`) - ilk cümle türü söyler, ardından
+   yayıncı, motor, platformlar, stüdyo geçmişi. Fragman bu bölümde. Başlık kalıbı arama verisinden
+   seçilir: otomatik tamamlama (`serp/google/autocomplete/live/advanced`, "{oyun} n", "{oyun} t") ve
+   GSC sorguları. Oyunlarda çoğu zaman "nasıl bir oyun / ne tür / ne oyunu" aranıyor, "nedir" ise
+   aranmıyor (Phantom Blade Zero, Ekim 2026). Keyword Planner bu uzun kuyruklara hacim vermez;
+   sinyal yoksa varsayılan "Nasıl Bir Oyun?"dur.
 3. **`{Oyun} Hikayesi Neyi Anlatıyor?`** - kurulum, ton, anlatı yapısı. Spoiler yok.
 4. **Oyunun en çok tartışılan sistemi** - ne olduğu, nasıl işlediği (madde listesi), eleştirmen
    ve oyuncu tarafının nasıl ayrıştığı. Editör notu buraya girer.
 5. **`{Oyun}'da Dövüş Nasıl İşliyor?`** - mekanikler, ilerleme, eleştiriler.
+   - **İlerleme / ölüm sistemi** (rakip incelemelerin çoğu işliyorsa ayrı H2: "{Oyun}'da Ölünce Ne
+     Oluyor?"): ölüm cezası, kayıt noktası, yeniden doğan düşmanlar, geliştirme ve geri alma.
 6. **`{Oyun} Puanları: Metacritic ve OpenCritic`** - puan tablosu + yorum. İlk cümle puanı ay-yıl ile
    verir, gün yazılmaz ("Ekim 2026 itibarıyla OpenCritic'te 84"); tablo başlığında da ay-yıl bulunur
    ("{Oyun} Puan Tablosu (Ekim 2026)"). v10.35 öncesi örneklerde gün içeren tarih vardı.
 7. **`{Oyun} Türkçe mi, Kaç Saat Sürüyor?`** - Türkçe dil desteği, süre, donanımın iki cümlelik özeti.
+   GSC'de iki soru da yoğunsa iki ayrı H2 olur ("{Oyun} Türkçe mi, Türkçe Gelecek mi?" ve "{Oyun} Kaç
+   Saat Sürüyor?"). **Süre (v10.36):** ana hikaye / yan görevlerle / tamamlama ayrı verilir, mümkünse
+   küçük bir süre tablosuyla (`Yazi.tablo`). Kaynak sırası: HowLongToBeat (yeterli veri varsa),
+   geliştirici / yönetmen açıklaması, eleştirmenlerin oynama süreleri. Yıllar önceki eski geliştirici
+   hedefi kullanılmaz.
+   - **Performans** (konsol modları ya da PC performansı tartışılıyorsa ayrı H2: "{Oyun} PS5 ve PC
+     Performansı"): konsol modları (FPS / çözünürlük), Pro farkı, PC gereksinimlerinin kısa özeti,
+     önemli bir ayar ipucu, Steam Deck. Bölüm **GeForce NOW atfıyla biter**: "Bilgisayarın bu
+     gereksinimleri karşılamıyorsa ya da indirme ve ayar derdiyle uğraşmak istemiyorsan oyunu
+     GeForce NOW ile bulut üzerinden oynayabilirsin..." Lisans dürüstlüğü korunur ("Steam'de sahip
+     olduğun oyunu GeForce NOW üyeliğinle"). Oyun GFN'de yoksa bu cümle yazılmaz.
 8. **`{Oyun} Alınır mı?`** - ilk cümle doğrudan cevap; ardından "tam sana göre" (tikli) ve
    "beklentini ayarla" (noktalı) diye **iki ayrı liste**. Olumlu ve uyarı maddeleri aynı tikli
    listede durmaz; işaret ile içerik çelişir.
-9. **`Genel Değerlendirme`** - iki paragraf: ne iyi, ne eksik. Kendi puanımızı vermeyiz.
+9. **`Genel Değerlendirme`** - iki paragraf: ne iyi, ne eksik. Kendi puanımızı vermeyiz. v10.36:
+   `Genel Değerlendirme: Artıları ve Eksileri` olarak kısa hüküm paragrafı + tikli artılar + noktalı
+   eksiler listesi de kullanılabilir; her madde tam ve sade bir cümledir.
 10. **`{Oyun} GeForce NOW'da Oynanır mı?`** - **tek paragraf**, "Evet, ..." ile açılır (bkz. 4).
 11. **SSS** - 6-8 soru, arama talebinden (bkz. 9).
 
@@ -39,6 +59,11 @@ her yeni içerikte aynen geçerlidir.**
 
 Zorunlu bileşenler değişmez: Hızlı Özet (3-6 madde), info-card (4 metrik), İçindekiler, CTA Paketler,
 Editör Notu, Hatırlatma, tercih edilen kaynak kartı, kapanış CTA'sı, FAQ akordiyonu + FAQ şeması.
+
+**İnceleme info-card'ı (v10.36):** Metacritic tek platformla yazılır ("88 PC"; PC yoksa ana platform),
+"88 PC / 87 PS5" yazılmaz. Süre karosu "Süre" değil **"Ana Hikaye"** etiketini taşır ve ana hikaye
+süresini gösterir ("25-30 Saat"); yan içerikli toplam süre metinde ve süre tablosunda kalır. Önerilen
+dört karo: Metacritic / OpenCritic / Steam / Ana Hikaye.
 
 ## 2. Sayılar: yuvarla, ham bırakma
 
@@ -75,6 +100,22 @@ gibi küçük kesin değerler (152, 70) olduğu gibi kalır. Tarih ve sürüm nu
   Anılabilenler: toplayıcılar (OpenCritic, Metacritic), HowLongToBeat, mağazalar, geliştirici ve
   yayıncı açıklamaları. `verify_output(..., yeni_icerik=True)` basın adında FAIL verir.
 - Olumsuz bulgular saklanmaz; "eksik taraflar da var" paragrafı yazının parçasıdır.
+- **Sade ve açık cümle (v10.36).** Teknik bir durum sıkıştırılmış isim tamlamasıyla yazılmaz:
+  "PC'de uzun ilk derleme", "çevre geometrisinde takılma", "kare zamanlamasında dalgalanma",
+  "doku yüklenme gecikmesi", "geliştirme iadesi" yapay zeka çevirisi gibi okunuyor (kullanıcı geri
+  bildirimi). Ne olduğu bir cümleyle anlatılır: "PC'de oyunu ilk açtığında grafiklerin hazırlanması
+  yarım saati bulabiliyor", "karakter görünmez duvarlara takılabiliyor", "görüntünün akıcılığında
+  dalgalanma oluyor", "silah geliştirmelerini geri alabiliyorsun". Terim gerekiyorsa parantezle
+  verilir: "(shader derlemesi)". Artı / eksi ve "alınır mı" maddeleri de tam cümledir.
+- **Paragraf uzunluğu (v10.36).** Gövde paragrafı en çok 4 cümle / ~80 kelime; aşan paragraf konunun
+  değiştiği yerden bölünür (tür / çıkış, ekip / ustalar, gereksinim / ayar gibi).
+  `verify_output(..., yeni_icerik=True)` 85 kelimeyi ya da 5 cümleyi aşan paragrafta uyarır.
+- **Link ekleri (v10.36).** Ek link metninin içine yazılır ve sözcüğün son haliyle uyumlu olur.
+  "-si / -sı" ile biten link metnine "-miz" yapıştırılmaz: `a(url, "Onimusha: Way of the Sword
+  incelemesi") + "miz"` "incelemesimiz" üretir; doğrusu `a(url, "Onimusha: Way of the Sword
+  incelememize") + " göz atabilirsin"`. Linkten sonra gelen "da / de" bağlacı link metninin son
+  ünlüsüne uyar: "GeForce NOW oyunlarına **da** göz atabilirsin" ("de" değil; bu hata eski şablondan
+  altı incelemeye geçmişti). `verify_output` iki durumu da denetler ("Link eki uyumu").
 - Em dash yok, klişe açılış yok, hype yok (content-rules kural 16).
 
 ## 4. GeForce NOW bölümü ve sistem gereksinimleri
@@ -175,6 +216,15 @@ DataForSEO ile (Türkiye `location_code` 2792, `language_code` "tr"):
 |---|---|---|
 | Hacim | `keywords_data/google_ads/search_volume/live` | Ana kelime, kısa ad, **alternatif ad**, niyet ekleri (inceleme, türkçe, kaç saat, sistem gereksinimleri, metacritic, çıkış tarihi) |
 | SERP | `serp/google/organic/live/advanced` (`people_also_ask_click_depth: 1`) | PAA soruları, ilgili aramalar, Türkçe rakipler, bilgi paneli |
+
+**Rakip içerik taraması (v10.36, inceleme ve güncel oyun yazıları).** Yazmadan ya da revize etmeden
+önce Türkçe SERP'teki inceleme yazıları, büyük İngilizce incelemeler, toplayıcıdaki eleştirmen özetleri
+ve inceleme videoları (DataForSEO `serp/youtube/video_subtitles/live/advanced`; Türkçe ve İngilizce,
+bir teknik / performans videosu dahil) taranır. Başlık yapıları ve konular çıkarılır; **en az iki
+kaynakta tekrar eden** ve bizde olmayan konular eklenir, tek kaynaklı bilgi yazılmaz, basın adı metinde
+geçmez. Phantom Blade Zero'da bu taramayla eklenenler: ölüm / ilerleme sistemi, PS5 modları ve PC ayar
+ipucu, harita ve yan görev yapısı, sonların yapısı, artılar-eksiler. Rakiplerin çeliştiği bilgi
+(son sayısı, süre) kaynağıyla birlikte dengeli yazılır.
 
 Yeni çıkan oyunda 12 aylık ortalama yanıltır; **çıkış ayının hacmi** ayrıca okunur (Dawnwalker:
 ortalama 2.400, Ağustos 6.600; "metacritic" eki ortalama 50, Ağustos 590). Rakip analizinde Türkçe

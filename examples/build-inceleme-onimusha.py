@@ -182,7 +182,7 @@ p(f"Evet, {AD} 4 Eylül'deki çıkışıyla aynı gün <a href=\"https://gameplu
   f"gelişi <a href=\"{GFN_YAZI}\">3 Eylül 2026 tarihli GFN Thursday yazısında</a> da yer aldı. 50 "
   "GB'lık kurulumu beklemeden buluttan başlatabiliyor, önerilen listedeki ekran kartına sahip "
   "olmasan da farklı cihazlardan oynayabiliyorsun; işi bulut tarafındaki RTX sunucuları yapıyor ve "
-  "kayıtların mağaza hesabında durduğu için kaldığın yerden devam ediyorsun. Güncel <a href=\"https://gameplus.com.tr/gfn/paketler\">GeForce NOW fiyat</a> bilgisine ve kütüphanedeki diğer <a href=\"https://gameplus.com.tr/gfn/oyunlar\">GeForce NOW oyunlarına</a> de göz atabilirsin.")
+  "kayıtların mağaza hesabında durduğu için kaldığın yerden devam ediyorsun. Güncel <a href=\"https://gameplus.com.tr/gfn/paketler\">GeForce NOW fiyat</a> bilgisine ve kütüphanedeki diğer <a href=\"https://gameplus.com.tr/gfn/oyunlar\">GeForce NOW oyunlarına</a> da göz atabilirsin.")
 
 h2("Sıkça Sorulan Sorular")
 

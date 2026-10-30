@@ -2312,6 +2312,42 @@ def verify_output(final_html, blog_type="general", n_games=None, expect_faq=Fals
         f"('değerlendirmelerin önemli bir kısmı', 'bir kesim eleştirmen')",
         warn=not yeni_icerik)
 
+    # v10.36: link ekleri. "-si/-si" ile biten link metnine yapisik "-miz" (incelemesi</a>miz ->
+    # "incelemesimiz") yeni icerikte FAIL; linkten sonraki "da/de" baglacinin unlu uyumu UYARI
+    # (Ingilizce ozel adlarin okunusu yaziliisindan farkli olabildigi icin kesin hata sayilmaz).
+    _gk = re.sub(r"<(script|style)\b.*?</\1>", "", final_html, flags=re.S)
+    _yapisik, _uyum = [], []
+    for _m in re.finditer(r"<a\b[^>]*>(.*?)</a>(\S*)", _gk, flags=re.S):
+        _ad = re.sub(r"<[^>]+>", "", _m.group(1)).strip()
+        if re.search(r"s[ıiuü]$", _ad) and re.match(r"m[ıiuü]z", _m.group(2)):
+            _yapisik.append(_ad[-30:] + "|" + _m.group(2))
+    for _m in re.finditer(r"<a\b[^>]*>(.*?)</a>\s+(da|de)\b", _gk, flags=re.S):
+        _sesli = [c for c in re.sub(r"<[^>]+>", "", _m.group(1)).lower() if c in "aıoueiöü"]
+        if _sesli and ("da" if _sesli[-1] in "aıou" else "de") != _m.group(2):
+            _uyum.append(re.sub(r"<[^>]+>", "", _m.group(1))[-30:] + " " + _m.group(2))
+    add(not _yapisik, "Link eki: yapışık -miz yok", "temiz",
+        f"link metnine yapışık ek: {_yapisik[:3]} - eki link metninin içine yaz ('incelememize')",
+        warn=not yeni_icerik)
+    add(not _uyum, "Link sonrası da/de uyumu", "temiz",
+        f"bağlaç link metninin son ünlüsüne uymuyor: {_uyum[:3]} ('oyunlarına da')", warn=True)
+
+    # v10.36: yeni icerikte paragraf uzunlugu (en cok 4 cumle / ~80 kelime) ve sikistirilmis teknik
+    # ifadeler ("uzun ilk derleme" gibi). Ikisi de UYARI.
+    if yeni_icerik:
+        _uzun = []
+        for _m in re.finditer(r"<p\b[^>]*>(.*?)</p>", _gk, flags=re.S):
+            _t = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", _m.group(1))).strip()
+            if len(_t.split()) > 85 or len(re.findall(r"[.!?](?:\s|$)", _t)) >= 5:
+                _uzun.append(_t[:45])
+        add(not _uzun, "Paragraf uzunluğu (4 cümle / ~80 kelime)", "temiz",
+            f"{len(_uzun)} uzun paragraf: {_uzun[:2]} - konunun değiştiği yerden böl", warn=True)
+        _kapali = re.findall(r"(ilk derleme|uzun derleme|çevre geometrisi\w*|kare zamanlaması\w*|"
+                             r"doku yüklenme\w*|gölgelendirici derlemesi\w*|geliştirme iadesi\w*)",
+                             re.sub(r"<[^>]+>", " ", _gk), flags=re.I)
+        add(not _kapali, "Sade teknik ifade", "temiz",
+            f"sıkıştırılmış ifade: {sorted(set(_kapali))[:4]} - durumu bir cümleyle anlat "
+            f"(inceleme-yazisi.md bölüm 3)", warn=True)
+
     # v10.28 (Kural 25.11): veri yoksa alan yazilmaz. "- / henuz olusmamisti / tbd" gibi bos veri
     # aciklamalari yeni icerikte FAIL, yazar taslaginda UYARI.
     _gorunen = re.sub(r"<[^>]+>", " ", re.sub(r"<(script|style)\b.*?</\1>", "", final_html, flags=re.S))
